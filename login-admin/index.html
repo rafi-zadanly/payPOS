@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Login | Developers</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+    .primary-font {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .secondary-font {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    html, body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container-fluid {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .row {
+        height: 100%;
+    }
+
+    .left-side {
+        background-color: #E5E5E5;
+        height: 100%;
+    }
+
+    .left-side img {
+        position: absolute;
+        width: 75%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .right-side .form {
+        margin-top: 20vh;
+    }
+
+    .login-text {
+        letter-spacing: 1.25px;
+    }
+
+    .form-input {
+        margin-top: 10vh;
+        text-align: left;
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .form-input label {
+        color: #2667FA;
+    }
+
+    .form-control, 
+    .form-control:focus {
+        padding-left: 0;
+        padding-right: 15px;
+        box-shadow: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .input-group span {
+        position: absolute;
+        bottom: 8px;
+        right: 0;
+        font-size: 16px;
+        z-index: 99;
+    }
+
+    .visibility-pass-btn {
+        cursor: pointer;
+    }
+
+    .login-btn {
+        border-radius: 7.5px 0px 7.5px 0px;
+        min-width: 25%;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 d-none d-md-inline left-side">
+                <img src="../assets/img/authentication.svg" alt="">
+            </div>
+            <div class="col-12 col-md-4 right-side">
+                <div class="row">
+                    <div class="col-12 text-center form">
+                        <span class="primary-font login-text h2">
+                            <img src="../assets/img/logo_without_text.png" alt="" width="30px">
+                            Login
+                        </span>
+                        <div class="form-input primary-font">
+                            <label class="mb-0" for="">Email</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter your email..">
+                                <span class="input-group-addon" id="sufixId">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="my-3"></div>
+
+                            <label class="mb-0" for="">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control pass-input" placeholder="Enter your password..">
+                                <span class="input-group-addon visibility-pass-btn" id="sufixId">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div class="my-4"></div>
+
+                            <div class="text-right">
+                                <button class="btn btn-outline-primary login-btn">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $('.visibility-pass-btn').click(function () { 
+            var type = $('.pass-input').attr('type');
+            if (type == 'password') {
+                $('.pass-input').attr('type', 'text');
+                $('.visibility-pass-btn i').removeClass('fa-eye');
+                $('.visibility-pass-btn i').addClass('fa-eye-slash');
+            }
+            if (type == 'text') {
+                $('.pass-input').attr('type', 'password');
+                $('.visibility-pass-btn i').removeClass('fa-eye-slash');
+                $('.visibility-pass-btn i').addClass('fa-eye');
+            }
+        });
+    </script>
+</body>
+</html>
